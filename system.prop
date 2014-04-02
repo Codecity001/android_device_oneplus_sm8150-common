@@ -49,6 +49,7 @@ vendor.iop.enable_uxe=0
 # Media
 av.offload.enable=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+persist.mm.enable.prefetch=true
 vendor.swvdec.log.level=1
 vendor.vidc.debug.level=1
 
