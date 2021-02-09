@@ -65,6 +65,8 @@ ro.bluetooth.a2dp_offload.supported=true
 persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
 ro.vendor.camera.res.fmq.size=1048576
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
+persist.camera.assert.panic=true
+ro.opcamera.support=true
 
 # Crypto
 ro.crypto.allow_encrypt_override=true

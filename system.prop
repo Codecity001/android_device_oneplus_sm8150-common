@@ -75,6 +75,10 @@ ro.vendor.product.device.db=OP_DEVICE
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
+# Priv-app permissions whitelist
+ro.control_privapp_permissions=enforce
+persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.vendor.data.mode=concurrent
