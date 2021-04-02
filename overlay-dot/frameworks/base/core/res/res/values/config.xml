@@ -21,7 +21,6 @@
         <item>/system/priv-app/DeviceSettings/DeviceSettings.apk</item>
         <item>/system/system_ext/priv-app/TouchGestures/TouchGestures.apk</item>
         <item>/system/priv-app/KeyHandler/KeyHandler.apk</item>
-        <item>/system/priv-app/OnePlusCameraHelper/OnePlusCameraHelper.apk</item>
     </string-array>
 
     <!-- Names of the key handler classes -->
@@ -29,7 +28,6 @@
         <item>org.evolution.device.DeviceSettings.KeyHandler</item>
         <item>com.android.touch.gestures.KeyHandler</item>
         <item>org.lineageos.settings.device.KeyHandler</item>
-        <item>org.lineageos.camerahelper.KeyHandler</item>
     </string-array>
 
     <!-- Hardware keys present on the device, stored as a bit field.
