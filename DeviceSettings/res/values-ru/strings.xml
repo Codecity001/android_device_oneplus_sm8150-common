@@ -46,4 +46,7 @@
     <string name="category_vibrator">Вибрация</string>
     <string name="vib_strength_title_head">Интенсивность</string>
     <string name="vib_strength_summary_head">Установить интенсивность общей вибрации</string>
+    <!-- Dolby -->
+    <string name="audio_title">Звук</string>
+    <string name="dolby_title">Dolby Atmos</string>
 </resources>
