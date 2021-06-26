@@ -240,6 +240,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OnePlusDoze
 
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
