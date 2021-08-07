@@ -46,12 +46,16 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.texture_cache_flushrate=0.4
 ro.hwui.texture_cache_size=72
 
+# ims
+persist.vendor.ims.disableADBLogs=1
+
 # IO Prefetcher
-vendor.iop.enable_uxe=0
+vendor.iop.enable_uxe=1
 
 # Media
 av.offload.enable=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+persist.mm.enable.prefetch=true
 vendor.swvdec.log.level=1
 vendor.vidc.debug.level=1
 
@@ -73,6 +77,10 @@ ro.vendor.product.device.db=OP_DEVICE
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
+# Priv-app permissions whitelist
+ro.control_privapp_permissions=enforce
+persist.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.vendor.data.mode=concurrent
@@ -82,7 +90,7 @@ ro.vendor.use_data_netmgrd=true
 telephony.lteOnCdmaDevice=1,1
 
 # RCS
-persist.rcs.supported=0
+persist.rcs.supported=1
 
 # Sensors
 persist.vendor.naruto.light.support=true

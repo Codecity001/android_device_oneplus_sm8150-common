@@ -50,6 +50,18 @@ void property_override(char const prop[], char const value[]) {
     __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_multi(char const system_prop[], char const vendor_prop[], char const bootimage_prop[], char const value[])
+{
+  property_override(system_prop, value);
+  property_override(vendor_prop, value);
+  property_override(bootimage_prop, value);
+}
+
+void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[]) {
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void load_dalvikvm_properties() {
   struct sysinfo sys;
   sysinfo(&sys);
@@ -79,6 +91,11 @@ void load_dalvikvm_properties() {
 }
 
 void vendor_load_properties() {
+  property_override_dual("ro.build.type", "ro.vendor.build.type", "user");
+  property_override_dual("ro.odm.build.type", "ro.product.build.type", "user");
+  property_override_dual("ro.system.build.type", "ro.system_ext.build.type", "user");
+  property_override("ro.boot.verifiedbootstate", "green");
+  int prj_version = stoi(android::base::GetProperty("ro.boot.prj_version", ""));
   int project_name = stoi(android::base::GetProperty("ro.boot.project_name", ""));
   int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
   switch(project_name){
@@ -100,11 +117,11 @@ void vendor_load_properties() {
           break;
         case 5:
           /* Global / US Unlocked */
-          property_override("ro.product.model", "GM1907");
+          property_override("ro.product.model", "GM1905");
           break;
         default:
           /* Generic */
-          property_override("ro.product.model", "GM1907");
+          property_override("ro.product.model", "GM1905");
           break;
       }
       break;
@@ -115,10 +132,6 @@ void vendor_load_properties() {
         case 1:
           /* China */
           property_override("ro.product.model", "GM1910");
-          break;
-        case 2:
-          /* T-Mobile */
-          property_override("ro.product.model", "GM1915");
           break;
         case 3:
           /* India */
@@ -138,6 +151,10 @@ void vendor_load_properties() {
           break;
       }
       break;
+    case 18831:
+      /* OnePlus 7 Pro T-Mobile */
+      property_override("ro.product.model", "GM1915");
+      break;
     case 18865:
       /* OnePlus 7T */
       property_override("vendor.product.device", "hotdogb");
@@ -145,10 +162,6 @@ void vendor_load_properties() {
         case 1:
           /* China */
           property_override("ro.product.model", "HD1900");
-          break;
-        case 2:
-          /* T-Mobile */
-          property_override("ro.product.model", "HD1907");
           break;
         case 3:
           /* India */
@@ -167,6 +180,10 @@ void vendor_load_properties() {
           property_override("ro.product.model", "HD1905");
           break;
       }
+      break;
+    case 19863:
+      /* OnePlus 7T T-Mobile */
+      property_override("ro.product.model", "HD1907");
       break;
     case 19801:
       /* OnePlus 7T Pro */
@@ -202,6 +219,13 @@ void vendor_load_properties() {
       break;
     }
 
+    property_override("ro.build.real_device", "true");
+    property_override("ro.build.release_type", "release");
+    property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
+    property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
+
   // dalvikvm props
   load_dalvikvm_properties();
+  // fingerprint
+  property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys");
 }

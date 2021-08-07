@@ -24,7 +24,7 @@ vendor.audio.dolby.ds2.enabled=true
 vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.enable.mirrorlink=false
 vendor.audio.flac.sw.decoder.24bit=true
-vendor.audio.hal.output.suspend.supported=true
+vendor.audio.hal.output.suspend.supported=false
 vendor.audio.hw.aac.encoder=true
 vendor.audio.noisy.broadcast.delay=600
 vendor.audio.offload.buffer.size.kb=32
@@ -34,12 +34,13 @@ vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.passthrough=false
 vendor.audio.offload.pstimeout.secs=3
 vendor.audio.offload.track.enable=true
-vendor.audio.parser.ip.buffer.size=0
-vendor.audio.safx.pbe.enabled=true
+vendor.audio.parser.ip.buffer.size=262144
+vendor.audio.safx.pbe.enabled=false
 vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
+vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
 vendor.audio_hal.period_size=192
@@ -65,6 +66,10 @@ ro.bluetooth.a2dp_offload.supported=true
 persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
 ro.vendor.camera.res.fmq.size=1048576
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
+log.tag.CHIUSECASE=ERROR
+persist.vendor.camera.logInfoMask=false
+persist.camera.assert.panic=true
+ro.opcamera.support=true
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
@@ -107,6 +112,8 @@ ro.fastbootd.available=true
 # Fingerprint
 persist.vendor.qfp=true
 persist.vendor.qfp.enable_fd=1
+vendor.boot.fingerprintbstate=orange
+
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
@@ -149,11 +156,17 @@ ro.hardware.keystore_desede=true
 ro.camera.notify_nfc=1
 ro.hardware.nfc_nci=nqx.default
 
+# OnePlus
+vendor.product.device=guacamoleb
+vendor.product.manufacturer=OPD
+
 # PASR
 vendor.pasr.activemode.enabled=true
 vendor.power.pasr.enabled=false
 
 # OnePlus
+ro.vendor.build.real.device=true
+ro.vendor.build.release_type=release
 vendor.product.manufacturer=OPD
 
 # Perf
@@ -181,3 +194,6 @@ persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.uicc_se_enabled=true
+
+# Shutdown
+sys.vendor.shutdown.waittime=500
