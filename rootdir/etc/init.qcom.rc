@@ -162,6 +162,10 @@ on boot
     chown system system /dev/elliptic1
     chmod 0644 /dev/elliptic1
 
+    #fps info
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 

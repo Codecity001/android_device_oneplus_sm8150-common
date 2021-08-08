@@ -59,6 +59,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="fps"
+        android:title="@string/fps_title">
+
+        <SwitchPreference
+            android:key="fps_info"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="vibrator"
         android:title="@string/category_vibrator">
 

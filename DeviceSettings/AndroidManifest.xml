@@ -55,6 +55,23 @@
         <activity android:name=".DeviceSettings" />
         <activity android:name=".KeyHandler" />
 
+        <!-- FPS overlay tile -->
+        <service
+            android:name=".FPSTileService"
+            android:icon="@drawable/ic_fps"
+            android:label="@string/fps_info_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <!-- FPS info service -->
+        <service android:name="com.dot.device.DeviceSettings.FPSInfoService"
+                android:exported="false">
+        </service>
+
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
