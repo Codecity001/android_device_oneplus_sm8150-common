@@ -64,10 +64,6 @@ ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
 ro.vendor.camera.res.fmq.size=1048576
-ro.vendor.camera.res.fmq.size=1048576
-log.tag.CHIUSECASE=ERROR
-persist.vendor.camera.logInfoMask=false
-persist.camera.assert.panic=true
 ro.opcamera.support=true
 
 # Crypto
