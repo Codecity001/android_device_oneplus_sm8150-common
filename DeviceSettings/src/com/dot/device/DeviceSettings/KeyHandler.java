@@ -119,6 +119,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
+        mDispOn = true;
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mNotificationManager
                 = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
