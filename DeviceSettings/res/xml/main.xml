@@ -74,6 +74,7 @@
 
         <SwitchPreference
             android:key="fps_info"
+            android:icon="@drawable/ic_fps"
             android:layout="@layout/dot_preference_full_alone_card"
             android:title="@string/fps_info_title"
             android:summary="@string/fps_info_summary"
